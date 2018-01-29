@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercice 2</title>
+		<link rel="stylesheet" type="text/css" href="styles/css_reset.css">
+		<style type="text/css">
+			body {height: 40000px;background: linear-gradient(pink, magenta);}
+			div:first-child {position: fixed;width: 100%;margin: auto;}
+			div:nth-child(2) {padding-top: 40px;}
+			div:first-child div:first-child {
+				position: relative;
+				width: 50%;
+				margin: 0 auto;
+				height: 40px;
+			}
+			div>div>ul:first-of-type {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: row;
+				flex-direction: row;
+				width: 100%;
+				margin: auto;
+			}
+			div>div>ul:first-of-type>li {
+				-webkit-flex-grow: 1;
+				flex-grow: 1;
+				width: 25%;
+				height: 40px;
+				overflow: hidden;
+			}
+			
+			div>div>ul:first-of-type>li:hover{
+				height: auto;
+				overflow: visible;
+			}
+			div>div>ul:first-of-type>li:hover p:first-of-type{
+				background-color: lightblue;
+			}
+			div>div>ul:first-of-type>li p:first-of-type {
+				display: block;
+				color: white;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				font-size: 30px;
+				background-color: blue;
+			}
+			div>div>ul:first-of-type>li:not(:first-of-type) p {
+				border-left: 2px solid white;				
+			}
+			div>div ul:first-of-type li ul {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column;
+				width: 300px;
+			}
+			div ul:first-of-type li ul li {
+				-webkit-flex-grow: 1;
+				flex-grow: 1;
+				border-top: 2px solid white;
+			}
+			div>ul:first-of-type a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			    line-height: 30px;
+				color: white;
+				text-decoration: none;
+				text-align: center;
+				background-color: blue;
+				opacity: 0.8;
+			}
+			div>ul:first-of-type a:hover {
+				background-color: lightblue;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<ul>
+					<li><p>A</p>
+						<ul>
+							<li><a href="#A1">A1</a></li>
+							<li><a href="#A2">A2</a></li>
+							<li><a href="#A3">A3</a></li>
+						</ul>
+					</li>
+					<li><p>B</p>
+						<ul>
+							<li><a href="#B1">B1</a></li>
+						</ul>
+					</li>
+					<li><p>C</p>
+						<ul>
+							<li><a href="#C1">C1</a></li>
+							<li><a href="#C2">C2</a></li>
+							<li><a href="#C3">C3</a></li>
+							<li><a href="#C4">Boom ! (T'as comprit? Parce que C4 c'est un explosif, et que les explosifs ca fait boom. Blague a part, cette explication de blague pas drole sert surtout de pretexte a un texte suuuuuuper long pour voir si ca bousille le css.)</a></li>
+						</ul>
+					</li>
+					<li><p>D</p>
+						<ul>
+							<li><a href="#D1">D1</a></li>
+							<li><a href="#D2">D2</a></li>
+							<li><a href="#D3">D3</a></li>
+							<li><a href="#D4">D4</a></li>
+							<li><a href="#D5">D5</a></li>
+							<li><a href="#D6">D6</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+			Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+			Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna. Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet
+		</div>
+	</body>
+</html>

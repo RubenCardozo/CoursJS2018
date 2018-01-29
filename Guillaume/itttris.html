@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ITT-Tris</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/css_reset.css">
+		<style type="text/css">
+			#itttris {
+				width: 800px;
+				height: 600px;
+				background-color: #444444;
+				padding: 1px;
+				display: inline-block;
+			}
+			#game {
+				width: 320px;
+				height: 544px;
+				margin: 20px;
+				background-color: #AAAAAA;
+				display: inline-block;
+			}
+			#meta-game {
+				position: absolute;
+				top: 21px;
+				width: 418px;
+				display: inline-block;
+				color: white;
+			}
+			
+			#meta-game h1 {
+				font-size: 42px;
+				color: white;
+			}
+			
+			#meta-game #meta-game-over {
+				color: red;
+			}
+			
+			.full-block {
+				position: relative;
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				padding: 0;
+				margin: 0;
+				flex-grow: 0;
+				flex-shrink: 0;
+				background-color: black;
+				border: 5px solid black;
+				box-sizing: border-box;
+			}
+			.empty-block {
+				position: relative;
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				padding: 0;
+				margin: 0;
+			}
+			
+			.piece {
+				position: absolute;			
+				padding: 0;
+				padding-top: 21px;
+				padding-left: 21px;
+				margin: 0;
+				display: inline-flex;
+				flex-wrap: wrap;
+			}
+			
+			.square {
+				width: 64px;
+				height: 64px;
+			}
+			.S {
+				width: 96px;
+				height: 96px;
+			}
+			.Z {
+				width: 96px;
+				height: 96px;
+			}
+			.line {
+				width: 128px;
+				height: 128px;
+			}
+			.T {
+				width: 96px;
+				height: 96px;
+			}
+			.L {
+				width: 96px;
+				height: 96px;
+			}
+			.reverse-L {
+				width: 96px;
+				height: 96px;
+			}
+			
+			#game-state {
+				position: absolute;
+				width: 320px;
+				height: 544px;
+				margin: 0;
+				display: inline-flex;
+				flex-wrap: wrap;
+			}
+		</style>
+		<script>
+			var game_state = null;
+			var cur_piece = null;
+			var piece_nb = 1;
+			var game_over = false;
+			var score = 0;
+			var score_mult = 100;
+			var pieces = [
+				{
+					shape: [
+						['    ','....','    ','    '],
+						['  . ','  . ','  . ','  . '],
+						['    ','    ','....','    '],
+						[' .  ',' .  ',' .  ',' .  ']
+					],
+					block_class: 'line',
+					color: 'yellow'
+				},
+				{
+					shape: [['..','..']],
+					block_class: 'square',
+					color: 'red'
+				},
+				{
+					shape: [
+						[' . ','...','   '],
+						[' . ',' ..',' . '],
+						['   ','...',' . '],
+						[' . ','.. ',' . ']
+					],
+					block_class: 'T',
+					color: 'green'
+				},
+				{
+					shape: [
+						['  .','...','   '],
+						[' . ',' . ',' ..'],
+						['   ','...','.  '],
+						['.. ',' . ',' . ']
+					],
+					block_class: 'L',
+					color: 'blue'
+				},
+				{
+					shape: [
+						['.  ','...','   '],
+						[' ..',' . ',' . '],
+						['   ','...','  .'],
+						[' . ',' . ','.. ']
+					],
+					block_class: 'reverse-L',
+					color: 'lightblue'
+				},
+				{
+					shape: [
+						['.. ',' ..','   '],
+						['  .',' ..',' . '],
+						['   ','.. ',' ..'],
+						[' . ','.. ','.  ']
+					],
+					block_class: 'Z',
+					color: 'magenta'
+				},
+				{
+					shape: [
+						[' ..','.. ','   '],
+						[' . ',' ..','  .'],
+						['   ',' ..','.. '],
+						['.  ','.. ',' . ']
+					],
+					block_class: 'S',
+					color: 'purple'
+				}
+			];
+			
+			function generatePiece() {
+				var r = Math.round(Math.random() * 100 % (pieces.length - 1));
+				//r = 0;
+				var next = {
+					shape: pieces[r].shape
+				};
+				next.rot = 0;
+				next.x = 320 / 2 - (32 * next.shape[next.rot][0].length / 2);
+				next.x -= next.x % 32;
+				next.y = 0;
+				next.is_placed = false;
+				next.type = r;
+				next.id = piece_nb++;
+				var html = '';
+				html += '<div id="piece_'+next.id+'" class="piece '+pieces[next.type].block_class+'">';
+				for (var i = 0; i < next.shape[next.rot].length; i++) {
+					for (var j = 0; j < next.shape[next.rot][i].length; j++) {
+						html +=	'<div class="'+(next.shape[next.rot][i][j] == '.' ? 'full-block' : 'empty-block')+'"></div>';
+					}
+				}
+				html += '</div>';
+				next.createdHtml = html;
+				return next;
+			}
+			
+			function col(pad_x, pad_y, rot_wanted) {
+				var x = (cur_piece.x + 32 * pad_x) / 32;
+				var y = (cur_piece.y + 32 * pad_y) / 32;
+				for (var j = 0; j < $('#game #piece_'+cur_piece.id).height() / 32; j++) {
+					for (var i = 0; i < $('#game #piece_'+cur_piece.id).width() / 32; i++) {
+						if (cur_piece.shape[(cur_piece.rot + rot_wanted) % cur_piece.shape.length][j][i] == '.') {
+							if (y + j < 0
+									|| x + i < 0
+									|| y + j >= game_state.length
+									|| x + i >= game_state[y + j].length
+									|| game_state[y + j][x + i].full == true) {
+								return true;
+							}
+						}
+					}
+				}
+				return false;
+			}
+			
+			function update() {
+				if ($('#game #piece_'+cur_piece.id).length) {
+					if (col(0, 1, 0)) {
+						cur_piece.is_placed = true;
+					} else {
+						cur_piece.y += 32;
+					}
+				} else {
+					$('#game').append(cur_piece.createdHtml);
+					$('#game #piece_'+cur_piece.id+' .full-block').css('background-color', pieces[cur_piece.type].color);
+					if (col(0, 0, 0)) {
+						game_over = true;
+						$('#meta-game #meta-game-over').show();
+					}
+				}
+			}
+			function render() {
+				$('#game #piece_'+cur_piece.id).css('left', cur_piece.x);
+				$('#game #piece_'+cur_piece.id).css('top', cur_piece.y);
+			}
+			function check_lines() {
+				var tmp_state = [];
+				for (var it = 0; it < $('#game').height() / 32; it++) {
+					tmp_state[it] = [];
+					for (var jt = 0; jt < $('#game').width() / 32; jt++) {
+						tmp_state[it][jt] = {};
+						tmp_state[it][jt].full = false;
+						tmp_state[it][jt].color = null;
+					}
+				}
+				
+				for (var j = game_state.length - 1; j > 0 ; j--) {
+					var to_continue = false;
+					for (var i = 0; i < game_state[j].length; i++) {
+						tmp_state[j][i] = game_state[j][i];
+						if (game_state[j][i].full == false) {
+							to_continue = true;
+						}
+					}
+					if (to_continue == true)
+						continue;
+					score += 1 * score_mult;
+					$('#meta-game #meta-game-score').text(score);
+					for (var j2 = j; j2 > 0; j2--) {
+						tmp_state[j2] = game_state[j2 - 1];
+					}
+					game_state = tmp_state;
+					check_lines();
+					return;
+				}
+			}
+			function update_game_state() {
+				var x = cur_piece.x / 32;
+				var y = cur_piece.y / 32;
+				for (var j = 0; j < $('#game #piece_'+cur_piece.id).height() / 32; j++) {
+					for (var i = 0; i < $('#game #piece_'+cur_piece.id).width() / 32; i++) {
+						if (y + j >= 0
+								&& x + i >= 0
+								&& y + j < game_state.length
+								&& x + i < game_state[y + j].length) {
+							game_state[y + j][x + i].full = (cur_piece.shape[cur_piece.rot][j][i] == '.' ? true : (game_state[y + j][x + i].full == true) ? true : false);
+							game_state[y + j][x + i].color = (cur_piece.shape[cur_piece.rot][j][i] == '.' ? pieces[cur_piece.type].color : (game_state[y + j][x + i].color != null) ? game_state[y + j][x + i].color : null);
+						}
+					}
+				}
+				check_lines();
+			}
+			
+			function print_game_state() {
+				for (var j = 0; j < game_state.length; j++) {
+					var tmp = '';
+					for (var i = 0; i < game_state[j].length; i++) {
+						tmp += (game_state[j][i].full == true) ? '#' : ' ';
+					}
+					console.log(tmp);
+				}
+			}
+			
+			function render_game_state() {
+				var tmp_html = '';
+				for (var j = 0; j < game_state.length; j++) {
+					for (var i = 0; i < game_state[j].length; i++) {
+						tmp_html +=	'<div class="'+(game_state[j][i].full == true ? 'full-block' : 'empty-block')+'" style="background-color: '+game_state[j][i].color+';"></div>';
+					}
+				}
+				$('#game #game-state').html(tmp_html);
+			}
+			
+			function tick() {
+				if (game_over) {
+					$('#game').css('background-color', 'crimson');
+					return;
+				}
+				if (cur_piece == null)
+					cur_piece = generatePiece();
+				update();
+				render();
+				if (cur_piece.is_placed == true) {
+					update_game_state();
+					$('#game #piece_'+cur_piece.id).remove();
+					render_game_state();
+					cur_piece = null;
+				}
+			}
+			$(document).ready(function() {
+				if (game_state == null) {
+					game_state = [];
+					for (var i = 0; i < $('#game').height() / 32; i++) {
+						game_state[i] = [];
+						for (var j = 0; j < $('#game').width() / 32; j++) {
+							game_state[i][j] = {};
+							game_state[i][j].full = false;
+							game_state[i][j].color = null;
+						}
+					}
+					div_game_state = '<div id="game-state"></div>';
+					$('#game').append(div_game_state);
+				}
+				
+				$('#meta-game #meta-game-over').hide();
+				
+				$(document).keydown(function(event) {
+					if (cur_piece == null)
+						return;
+					if (event.which == 38) { //UP
+						if (!col(0, 0, 1)) {
+							cur_piece.rot = (cur_piece.rot + 1) % cur_piece.shape.length;
+							var html = '';
+							html += '<div id="piece_'+cur_piece.id+'" class="piece '+pieces[cur_piece.type].block_class+'">';
+							for (var i = 0; i < cur_piece.shape[cur_piece.rot].length; i++) {
+								for (var j = 0; j < cur_piece.shape[cur_piece.rot][i].length; j++) {
+									html +=	'<div class="'+(cur_piece.shape[cur_piece.rot][i][j] == '.' ? 'full-block' : 'empty-block')+'"></div>';
+								}
+							}
+							html += '</div>';
+							cur_piece.createdHtml = html;
+							$('#game #piece_'+cur_piece.id).remove();
+							$('#game').append(cur_piece.createdHtml);
+							$('#game #piece_'+cur_piece.id+' .full-block').css('background-color', pieces[cur_piece.type].color);
+							render();
+						}
+					}
+					if (event.which == 40) { //DOWN
+						if (col(0, 1, 0)) {
+						} else {
+							cur_piece.y += 32;
+							render();
+						}
+					}
+					if (event.which == 37) { //LEFT
+						if (!col(-1, 0, 0)) {
+							cur_piece.x -= 32;
+							render();	
+						}
+					}
+					if (event.which == 39) { //RIGHT
+						if (!col(1, 0, 0)) {
+							cur_piece.x += 32;
+							render();
+						}
+					}
+				});
+				setInterval(tick, 500);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="itttris">
+			<div id="game"></div>
+			<div id="meta-game">
+				<h1>ITT-TRIS</h1>
+				<h2>Score: <span id="meta-game-score">0</span></h2>
+				<h2><span id="meta-game-over">Game Over !</span></h2>
+			</div>
+		</div>
+	</body>
+</html>
