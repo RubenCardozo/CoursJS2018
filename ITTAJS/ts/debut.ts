@@ -38,13 +38,16 @@ var manger=function(){
 console.log( typeof(manger));
 manger();
 
+/*Fonction en JS avec parametre */
 var ecrire= function(texte){
-    console.log(texte);
+    if(typeof (texte) === "undefined")
+        console.log("texte vide");
+    else
+        console.log(texte);
 };
 
-/*Fonction en JS avec parametre */
 ecrire("Sofia aime à Andrea");
-
+ecrire();
 
 
 
