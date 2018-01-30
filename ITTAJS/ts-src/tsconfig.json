@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "pretty": true,
+        "outDir": ".build",
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "jsx": "react"
+    
+    },
+    "files": [
+        "debug.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
