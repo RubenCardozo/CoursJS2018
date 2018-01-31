@@ -202,7 +202,7 @@ var triAlpha= function (c1 ,c2) {
     return c1.localeCompare(c2,"fr");
 };
 t2.sort(triAlpha);
-console.log(t2.sort(triAlpha));
+//console.log(t2.sort(triAlpha));
 
 var t3= t1.concat(t2);
 //console.log(t3);
@@ -214,12 +214,41 @@ m+= 1;//13
 m--;//12
 m-=1;//11
 m*=2;//22
-m /= 3;//7,3
+m /= 3;//7,333333333
 m/=n;//Infinity
 m-= Infinity; //NaN (not a number)
 m+=Infinity; //NaN
-m=15
-console.log(m %2);
+m=15;
+//console.log(m % 2);//(m modulo 2)=1
+
+/**********************************************\
+ * Concatenation et remplaçament de caractères *
+\**********************************************/
+var concat = ('albert'+' '+'Einstein').toUpperCase();
+//var concat= concat.toUpperCase();
+concat = concat.concat(' est UN genie').toLowerCase();
+concat = concat.replace('einstein','Algoud').toLowerCase();
+concat = concat.replace(/a/g , 'U');
+concat = concat.replace(/[iu]/g , 'O');
+concat="AbraCadabra";
+console.log(concat.replace(/A/g , 'O'));//ObraCadabra
+console.log(concat.replace(/a/, 'O'));//AbrOCadabra
+console.log(concat.replace(/a/gi , 'O'));//ObrOCOdObrO
+console.log(concat.replace(/a[cb]/gi , 'O'));//OrOadOra
+console.log(concat.replace(/a(c|b)/gi , 'O'));//OrOadOra
+console.log(concat.replace(/a[b-e]/gi , 'O'));//OrOOOra
+console.log(concat.replace(/a[^cb]/gi , 'O'));//AbraCOabra
+console.log(concat.replace(/ab*/gi , 'O'));//OrOCOdOrO
+console.log(concat.replace(/ab?/gi , 'O'));//OrOCOdOrO
+console.log(concat.replace(/a./gi , 'O'));//OrOOOra
+console.log(concat.replace(/ab+/gi , 'O'));//OraCadOra
+console.log('a  b   c\td'.replace(/\s/g , '-'));//a--b---c-d
+console.log('a  b   c\td'.replace(/\s+/g , '-'));//a-b-c-d
+console.log('a  b   c\td'.replace(/\s{1,3}/g , '-'));//a-b-c-d// 1à 3 espace
+console.log('a  b   c\td'.replace(/\s{2,}/g , '-'));//a-b-c	d//2 à N espace
+console.log('123.456'.replace(/\d/g , '0'));//000,000 = [0-9]
+console.log('123.456'.replace(/\D/g , ','));//[^0-9]->123,456
+console.log('123.456'.replace(/(\d+)\.(\d+)/g , 'rien'));//000,000 = [0-9]
 
 
 
