@@ -230,15 +230,44 @@ function conditionOR() {
 
 
 
-function bucleDansUnBucle() {
-	for (var i = 1; i <= 5; i++) {
+function doubleBucleDebugger(){
+
+	for (var i = 1 , arret = false; i <= 5 && !arret; i++) {
+		
 		for (var j = 1; j <= 5; j++) {
-			console.log(i + '*' + j + '=' + i * j);
+			console.log(i + '*' + j + '= s' + (i * j));
 			if (i*j>10) {
+				arret = !arret;
 				break;
 			}
 		}
 	}
 }
-bucleDansUnBucle();
 
+
+function doubleBucle() {
+	externe: for (var i = 1; i <= 5; i++) {
+		interne: for (var j = 1; j <= 5; j++) {
+			console.log(i + '*' + j + '= s' + (i * j));
+			if (i * j > 10) {
+				break externe;
+			}
+		}
+	}
+	return { i, j };
+}
+
+console.log("***************************");
+var ti = [];
+ti[2]=5; ti[4]=7;
+ti.p='papa';
+var index =0;
+for (index in ti){
+	console.log(ti[index]);
+}
+
+console.log("***************************");
+for (index =0; index < ti.length; index++) {
+	console.log(ti[index]);
+	
+}
