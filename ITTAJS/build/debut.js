@@ -339,6 +339,7 @@ var ti = [];
 ti[2]=5; ti[4]=7;
 ti.p='papa';
 var index =0;
+
 for (index in ti){
 	console.log(ti[index]);
 }
@@ -348,6 +349,118 @@ for (index =0; index < ti.length; index++) {
 	console.log(ti[index]);
 	
 }
+
+var o = {
+    p1:"mama",
+    f1:function(){
+        console.log(this);
+    }
+};
+
+var index=0;
+for (index in o) {
+    console.log(index+"="+o[index]);
+};
+
+var index =0;
+while(index < ti.length){
+    console.log(index+"-"+ti[index]);
+    index++;
+}
+
+var t=100;
+while(true){
+    t-=t%8;
+    if (--t<=0) {
+        break;   
+    }
+    console.log(t);
+}
+
+console.log("***************************");
+
+index =0;
+do{
+    console.log(index+-+ti[index]);
+    index++;
+}while(index<ti.length);
+
+console.log("***************************");
+var h = '10';
+console.log(h==10);//true
+console.log(h + 10);//'105'
+console.log(h * 5);//50
+console.log(h===10);//false. Compare aussi le type.
+console.log(h=100)//100
+if (h="100"){
+    console.log("vrai");
+}
+h="10";
+console.log(h!=10);//false
+console.log(h!==10);//true
+console.log(5+2*3);//true
+
+var n = null;
+var m = undefined;
+var bb;
+console.log(typeof n);//objet
+console.log(typeof m);//undefined
+console.log(typeof bb);//undefined
+console.log(m==bb);//true
+console.log(n==m);//true
+console.log(n===m);//false
+// if (!=m) {
+//     console.log("WTF");//WTF
+// }
+
+if (m==false) {//nope
+    console.log("WTF again");
+}
+
+var j=10, k=10;
+if (j++ == 10 && k-- == 10) 
+{
+    console.log(j+" "+k);
+}
+
+var j=10, k=10;
+if (j++ == 10 || k-- == 10)
+{
+    console.log(j+" "+k);
+}
+
+var j=10, k=10;
+if (j++ == 8 | k-- == 10) //1
+{
+    console.log(j+" "+k);
+}
+
+j=10;
+var t = (j==10 ? "dix" : "autre");
+console.log('Ternaire simple:' +t);
+
+var t = (j==10 ? "dix" :
+                 (j==11 ? "onze" : "autre"));
+console.log('Ternaire double:'+t);
+
+switch (j) {
+    case 10:
+        t='dix';
+        break;
+    case 11:
+        t='onze';
+        break;
+    default:
+        t='autre';
+        break;
+}
+console.log('switch:'+ t);
+
+
+
+
+
+
 
 
 /***/ })

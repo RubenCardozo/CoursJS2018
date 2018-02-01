@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "debug.ts"
+        "passage.ts"
     ],
     "exclude": [
         "node_modules"
