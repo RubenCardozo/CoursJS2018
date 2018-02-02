@@ -47,36 +47,14 @@ function ajouteO(param) {
     param.p++;
 }
 
-function ajouteATab(tableau, valeurAjoute){
-    for (var index in tableau) {
-    tableau[index]+=valeurAjoute;
+function ajouteATab(monTableau, valeurAjoute){
+    for (var index in monTableau) {
+    monTableau[index]+=valeurAjoute;
     }
 }
 
-// function ajouteSommeATab(monTableau){
-//     var somme=0;
-//     for (var index in monTableau) {
-// 		somme += monTableau[index];	
-//     }
-//     monTableau.push(somme);
-// }
 function ajouteSommeATab(monTableau){
     monTableau.push(Somme(monTableau));
-}
-
-
-
-function Somme(tableau) {
-    var somme = 0;
-    for (var index in tableau) {
-        if (typeof ti[index]==="number") {
-             somme += tableau[index];
-        }
-        else{
-            break;
-        }
-    }
-    return somme;
 }
 
 function ajouteOSommeAtab(monTableau){
@@ -86,3 +64,52 @@ function ajouteOSommeAtab(monTableau){
 function ajoutePropSommeAtab(monTableau){
     monTableau.somme =Somme(monTableau);
 }
+
+function Somme(tableau) {
+/****Manière Clasic********/
+    // var somme = 0;
+    // for (var index in tableau) {
+    //     if (typeof tableau[index]==="number") {
+    //          somme += tableau[index];
+    //     }
+    //     else{
+    //         break;
+    //     }
+    // }
+    // return somme;
+
+/******Avec forEach********/
+    // var somme =0;
+    // var ajout = function (element) {
+    //     if (typeof element === "number") {
+    //         somme+= element;
+    //     }
+    // }
+    // tableau.forEach(ajout);
+    // return somme;
+
+/****Avec fonction anonyme*****/
+    // var somme = 0;
+    // tableau.forEach(
+    //     function (element) {
+    //         if (typeof element === "number") {
+    //             somme+= element;
+    //         }
+    //     });
+    // return somme;
+
+/******Avec la fonction every********/
+    var somme = 0;
+    tableau.every(
+        function (element, index, array) {
+            if (typeof element === "number") {
+                somme+= element;
+                return true;
+            }else{
+                return false;
+            }
+        });
+    return somme;
+}
+
+

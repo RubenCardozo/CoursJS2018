@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "passage.ts"
+        "lesObjets.ts"
     ],
     "exclude": [
         "node_modules"
