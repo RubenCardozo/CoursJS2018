@@ -81,9 +81,23 @@ Voiture.prototype.getMarqueMaj=function(){
     return this.getMarque().toUpperCase();
 }
 
+var getPrixTTC =function(){
+    return this.getPrix()*1.25;
+}
+
+var getPrixTTC_TVA =function(tva){
+    return this.getPrix() * (1+tva/100);
+}
+
+console.log("***** Prix TTC= "+getPrixTTC.call(audi));
+console.log("***** Prix TTC avec TVA= "+getPrixTTC_TVA.call(audi,25));
+
 console.log(audi.getMarqueMaj());//"AUDI"
 console.log(clio.getMarqueMaj());//"RENAULT"
 
+
+
+/***Humain *******/
 var Humain = function(nom) {
     this.nom = nom;
 };
@@ -110,4 +124,97 @@ audi.setModele.call(this,'A5');
 console.log(audi.getModele.call());
 
 console.log(Humain.prototype.getNom.call(moi));
+
+console.log("*********Fonctions: Call et Apply*************");
+
+var LaFonction = function(id, nom){
+    console.log(id + "- "+ nom);
+};
+
+LaFonction(15,'Paul');
+LaFonction.call(undefined, 25, 'Henri');
+LaFonction.apply(undefined, [32, 'Marcel']);
+console.log(Math.min.apply(null, [4,8,3,6]));//=console.log(Math.min(4,8,3,6));
+
+var Rectangle =function(long, larg){
+    this.long=long;// this0 rectangle courante
+    this.larg=larg;
+    Rectangle.prototype.getPerimetre=function() {
+        return (this.long*Rectangle.multiplicateur  
+                + this.long*Rectangle.multiplicateur);
+    }
+};
+
+Rectangle.prototype.surface=function(){
+    return this.long*this.larg; 
+}
+
+Rectangle.multiplicateur =2;
+
+var Boite= function(long, larg, haut){
+    Rectangle.call(this,long,larg);//this = La boite courante
+    this.haut= haut;
+};
+Boite.prototype= Rectangle.prototype;//new Rectangule
+Boite.prototype.constructor= Boite;
+
+/***************Rectangle ********************/
+console.log('/**Rectangle */');
+
+var r1 = new Rectangle(10, 20);
+
+console.log(r1 instanceof Rectangle);
+console.log("Perimètre= "+ r1.getPerimetre());
+
+
+/***************Boite ********************/
+console.log('/**Boite */');
+
+var b1 = new Boite(15, 20, 5);
+
+console.log(b1 instanceof Boite);
+console.log("Surface= "+b1.surface());
+console.log(b1 instanceof Rectangle);
+
+Rectangle.dessine=function(rect){
+    if (rect && rect instanceof Rectangle) {
+        console.log("Longueur="+rect.long+", et langeur= "+rect.larg);
+    }else{
+        console.log("pas un rectangle");
+    }
+   
+}
+
+Rectangle.dessine(r1);
+Rectangle.dessine(b1);
+
+var incremente=( 
+    function () {
+        var i= 1;
+        return function(){
+            return i++;
+        }
+    }
+)();
+
+console.log(incremente());
+console.log(incremente());
+
+
+
+function division(a,b) {
+        if (b == 0){
+            throw new Error ('division imposible');
+        }
+        return a/b
+}
+
+try{
+    console.log(division(5,0));
+}
+catch(error){
+    console.log(error);
+    console.log(error.message+ ", error a la ligne "+ error.lineNumber);
+}
+console.log('fin');
 
