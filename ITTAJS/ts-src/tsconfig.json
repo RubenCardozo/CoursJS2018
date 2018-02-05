@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "lesObjets.ts"
+        "canvas.ts"
     ],
     "exclude": [
         "node_modules"
