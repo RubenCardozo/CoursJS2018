@@ -1,5 +1,5 @@
 var c1=document.getElementById('c1');
-var context=c1.getContext("2d");
+var context = c1.getContext("2d");
 context.strokeStyle = "gray";
 context.fillStyle = "red";
 context.lineWidth =5;
@@ -34,8 +34,10 @@ context.font="30px Verdana";
 context.rotate(Math.PI /4);
 context.fillText("Hello canvas",50,50);
 context.restore();
+
 context.rect(70, 20, 200, 120);
 context.clip();
+
 context.fillText("Hello canvas",50,100);
 
 var img =  new Image();

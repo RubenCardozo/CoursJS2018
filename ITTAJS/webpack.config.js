@@ -3,10 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
     devtool:"sourcemap",
-    entry: [ path.resolve(__dirname, '../../ts-src/canvas.ts')],
+    entry: [ path.resolve(__dirname, '../../ts-src/ajax.ts')],
     output: {
         path: path.resolve(__dirname, '../../build'),
-        filename: 'canvas.js'
+        filename: 'ajax.js'
     },
     module: {
         loaders: [{

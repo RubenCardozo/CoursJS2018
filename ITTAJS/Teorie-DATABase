@@ -1,0 +1,6 @@
+1- IndexedDb
+2- WebSQL
+3- LocalStorage / Session Storage
+            Key-Value-Pair
+            taille limite: 5mb Max
+            Synchro

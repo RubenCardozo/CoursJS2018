@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "canvas.ts"
+        "jsDom.ts"
     ],
     "exclude": [
         "node_modules"
