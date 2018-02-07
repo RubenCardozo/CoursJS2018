@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Itta Form</title>
+</head>
+<body>
+    <main>
+        <div class="firstForm">
+            <div>Formulaire de saisie</div>
+            <p>Ceci est un paragraphe qui va faire plusiers. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed officia necessitatibus pariatur cupiditate placeat, impedit hic blanditiis, dignissimos culpa eius perferendis rem enim a modi cumque sit illum dolores ducimus?</lignes> </p>
+            <h2>Premier form</h2>
+            <form method="GET" >
+                <label for="nom">Nom: </label>
+                <input type="text" name="nom" pattern="([1-9]|1\d|20)"><br>
+
+                <label for="nom">Desactivé: </label>
+                <input type="text" disabled><br>
+
+                <label for="prenom">Prenom: </label>
+                <input type="text" name="prenom"id="prenom" readonly value="test"><br>
+
+                <label for="pseudo">Surnom: </label>
+                <input type="password" name="pseudo" id="pseudo" placeholder="Nickname" required autofocus><br>
+
+                <label for="motdepasse">Password: </label>
+                <input type="password" name="motdepasse" size="12" maxlength="10"><br>
+
+                <h4>Status familial</h4>
+                <label for="marie">Marié: </label>
+                <input type="checkbox" name="marie"><br>
+
+                <label for="enfants">Enfants: </label>
+                <input type="checkbox" name="enfants"><br>
+
+                <h4>Status social</h4>
+                <label for="status">Salarié: </label>
+                <input type="radio" value="salarie" name="statut">
+
+                <label for="status">Independant: </label>
+                <input type="radio" value="independant" name="statut"><br>
+
+                <input type="submit" value="Envoi"><br>
+            </form>
+        </div>
+
+        <div class="secondForm">
+            <h2>Second form</h2>
+                <form method="POST" action="itta.html">
+                    <label for="Nom">Age: </label>
+                    <input type="number" name="age"><br>
+
+                    <label for="embauche">Date d'enbauche: </label>
+                    <input type="date" name="embauche"><br>
+                    
+                    <label for="arrivee">heure d'arrivée: </label>
+                    <input type="datetime-local" name="arrivee"><br>
+
+                    <label for="mois">Mois: </label>
+                    <input type="month" name="mois"><br>
+
+                    <label for="semaine">Semaine: </label>
+                    <input type="week" name="semaine"><br>
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email"><br>
+                    
+                    <label for="site">URL: </label>
+                    <input type="url" name="site"><br>
+
+                    <label for="telephone">Téléphone: </label>
+                    <input type="tel" name="telephone"><br>
+                    
+                    <label for="minMax">Min-Max: </label>
+                    <input type="range" name="minMax" min="-10" max="10"><br>
+
+                    <label for="couleur">Couleur: </label>
+                    <input type="color" name="couleur"><br>
+
+                    <label for="recherche">Recherche: </label>
+                    <input type="search" name="recherche" ><br>
+
+                    <label for="hobbies">Hobbies: </label>
+                    <select name="hobbies" multiple>
+                        <optgroup label="cerebral"></optgroup>
+                        <option value="Read">Lecture</option>
+                        <option value="Chess">Echecs</option>
+
+                        <optgroup label="physique"></optgroup>
+                        <option value="Futbol">Futbol</option>
+                        <option value="Tennis">Tennis</option>
+                    </select><br>
+
+                    <label for="browserFavori">Browser Favori: </label>
+                    <input type="browser" name="browserFavori" type="text" autofocus>
+                    <datalist>
+                        <option value="Internet explorer"></option>
+                        <option value="Firefox"></option>
+                        <option value="Chrome"></option>
+                        <option value="Opera"></option>
+                        <option value="Safari"></option>
+                    </datalist><br>
+
+                    <textarea cols="30" rows="4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, qui voluptatum. Laborum sint officiis dicta eveniet a aspernatur, itaque laboriosam saepe qui doloribus natus quod? Magni assumenda libero rem voluptatibus.
+                    </textarea>
+
+                    <button type="submit" value="envoi" formaction="ittaform.html" >Envoyer</button>
+                    <button type="submit" value="envoi en GET" formmethod="get">Envoi GET</button>
+
+                </form>
+        </div>
+    </main>
+</body>
+</html>

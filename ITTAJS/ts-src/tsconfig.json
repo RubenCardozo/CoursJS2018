@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "jsDom.ts"
+        "formJS.ts"
     ],
     "exclude": [
         "node_modules"

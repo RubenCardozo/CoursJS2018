@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulaire avec JS</title>
+</head>
+<body>
+    <form name="formulaire">
+            <label for="nom" >Nom: </label>
+            <input type="text"name:"nom"><br>
+
+            <label for="age" >Age: </label>
+            <input type="number" name:"age"><br>
+
+            <label for="email" >Email: </label>
+            <input type="email" name:"adresse"><br>
+
+            <button type="button">Envoi (button)</button>
+    </form>
+    <script type="text/javascript" src="build/formJS.js"></script>
+    <!-- <script>
+        console.log(formulaire.nom.value);
+        this.age.setCustomValidity("Age est incorrect");
+        formulaire.nom.value = "saisir un nom";
+
+        formulaire.age.oninput=function(){
+            if (this.validity.valid) {
+                this.setCustomValidity("Age est incorrect")
+            }else{
+                this.setCustomValidity("")
+            }
+        }
+
+        formulaire.onsubmit=function(){
+            if (this.nom.value=="saisir un nom") {
+                alert(this.nom.value+"est invalide");
+                return false;
+            }
+        };
+        console.log(document.forms["formulaire"]["nom"].value);
+        console.log(document.forms[0]["nom"].value);
+        console.log(document.querySelector(
+            "form[name='formulaire'] input[name='nom']").value);
+
+    </script> -->
+</body>
+</html>

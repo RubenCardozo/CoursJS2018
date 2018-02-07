@@ -65,6 +65,58 @@ window.onload=function(){
     par.innerHTML="Paragraphe";
     deux.appendChild(par);
     console.log(deux.childNodes.length);
-    //deux.childNodes[0].remove();
-    deux.removeChild(deux.childNodes[0]);
+
+    var _remove=function(){
+        this.parentNode.removeChild(this);
+    }
+    if (!Text.prototype.remove) {
+        Text.prototype.remove =_remove;
+    }
+
+    if (!Element.prototype.remove) {
+        Element.prototype.remove =_remove;
+    }
+
+    deux.childNodes[1].remove();
+    //deux.removeChild(deux.childNodes[0]);
+
+    for (var i= 0; i < document.body.childNodes.length; i++) {
+        //Attribute=2, Comment =8
+        var n= document.body.childNodes[i];
+        if (n.nodeType==3) {//Text
+            console.log(n.nodeValue);
+        }else{
+            if (n.nodeType==1) {
+                console.log(n.nodeName);
+                //console.log(n.firstChild.nodeValue);
+            };
+        };
+    };
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+    console.log(screen.availWidth+" "+screen.width);
+    console.log(screen.availHeight+" "+screen.height);
+    console.log(navigator.userAgent);
+    console.log(navigator.cookieEnabled);
+    console.log(location.href);
+    //location.href="http://www.google.com"
+    console.log(history.length);
+    //history.back();
+
+    var id = setInterval(doIt,500); 
+    var n=0;
+    function doIt(){
+        console.log("just do it again"+ n);
+        if (n++ >= 5) {
+            clearInterval(id);
+        }
+    }
+    var idt= setTimeout(doitLater, 300);
+    function doitLater(){
+        console.log("just do it doitLater");
+        clearTimeout(idt);
+    }
+
+
 };  
+

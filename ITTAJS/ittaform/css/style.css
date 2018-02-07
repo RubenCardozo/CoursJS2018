@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #f1edd4; }
+
+main {
+  background: #f3f1e6;
+  width: 400px;
+  height: 800px;
+  border: 1px solid;
+  position: relative;
+  margin: 0px auto;
+  padding: 10px,10px,10px,10px; }
+
+:disabled {
+  background: red; }
+
+input[type=text]:enabled {
+  background: lightpink;
+  height: 20px; }
+
+input:focus {
+  background: yellow !important; }
+
+input:invalid {
+  color: red; }
+
+input:required {
+  /*inverse optional*/
+  background-color: green; }
+
+input:read-only {
+  /*inverse read-write*/
+  background-color: green; }
+
+input:out-of-range {
+  /*inverse in-range*/
+  background-color: green; }
+
+/*Seudo class, c'est avec un seul deux point :
+Seudo element, c'est avec double deux point ::
+*/
+textarea::selection {
+  color: violet; }
+
+div::first-letter {
+  color: red;
+  font-variant: small-caps;
+  font-size: 20px; }
+
+div::before {
+  content: "`"; }
+
+div::after {
+  content: ">"; }
+
+p::first-line {
+  color: red; }
+
+p::selection {
+  background-color: #f0e89c;
+  color: #741009; }
+
+p::-moz-selection {
+  background-color: #f0e89c;
+  color: #741009; }
+
+/*# sourceMappingURL=style.css.map */
