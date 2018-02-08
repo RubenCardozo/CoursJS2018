@@ -1,4 +1,5 @@
 import * as $ from "jquery";
+import "jquery-ui"
 
 window.onload=function(){
     document.getElementById("premiere").innerHTML="<b>Premiere</b>";

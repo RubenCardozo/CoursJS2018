@@ -1,0 +1,6 @@
+{
+    "nom": "Paul",
+    "age": 25,
+    "prenom" :["Pierre", "Jacques"],
+    "marie" : true
+}

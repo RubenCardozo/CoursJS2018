@@ -10,7 +10,7 @@
     
     },
     "files": [
-        "formJS.ts"
+        "ajax.ts"
     ],
     "exclude": [
         "node_modules"

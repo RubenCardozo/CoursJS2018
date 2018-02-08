@@ -1,0 +1,55 @@
+body{
+    background-color: beige;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tableau {
+    display: table;
+    border-collapse: collapse;
+  }
+  
+  .tableau .col {
+    border: 5px solid #9c9595;
+    display: table-cell;
+  }
+  
+  .tableau .lig {
+    border: 2px solid #f8455d;
+    display: table-row;
+  }
+  
+  /*Tableau*/
+  .tableau {
+    display: table;
+    border: 5px solid #9c9595;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #f3ebeb;
+  }
+  
+  .tableau .legende {
+    display: table-caption;
+    text-align: center;
+  }
+  
+  .tableau .entete {
+    display: table-header-group;
+    color: black;
+    height: 50px;
+  }
+  
+  .tableau .row {
+    display: table-row-group;
+  }
+  
+  .tableau .box {
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    border: 1px solid #f8455d;
+  }
+  
+  .tableau .footer {
+    display: table-footer-group;
+    color: #1b8553;
+  }
