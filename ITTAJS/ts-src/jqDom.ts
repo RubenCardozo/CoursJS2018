@@ -1,5 +1,5 @@
 import * as $ from "jquery";
-//import * as jQueryUI from "jquery-ui";
+import "jquery-ui";
 
 $(document).ready(function(){
 

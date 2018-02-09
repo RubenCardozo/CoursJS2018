@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,12 @@
 </head>
 <body>
     <form name="formulaire">
+        <label for="nom">ID: </label>
+        <input type="text" name="id" id="id" disabled><br>
+
         <label for="nom" >Nom: </label>
         <input type="text"name="nom" id="nom"><br>
-    
+
         <label for="age" >Age: </label>
         <input type="number" name="age" id="age"><br>
     
@@ -19,7 +22,7 @@
         <button type="button" id="envoi">UPDATE</button>  
     </form>
     <button type="button" id="load">LOAD</button>
-    
+
     <!-- Liste des Données -->
     <section class="tableau"> 
             <section class="legende">LISTE</section> 
