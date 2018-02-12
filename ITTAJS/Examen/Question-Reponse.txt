@@ -1,0 +1,137 @@
+Question 1
+Nav
+Reponse:C
+
+Question 2
+Reponse:
+Var dest;		//On declare la variable dans showDestination
+localStorage.destination;// On appelle storeDestination avec click sur le button
+
+Question 3
+Reponse:D et B
+<Figure>	//Entour les images
+<Figcaption>	//Description des images
+
+Question 4
+Reponse:D
+Customer.prototype.getCommission()= function(){//prototype c'est la clase en JS
+alert("payroll")
+}
+
+
+Question 5
+Reponse:B
+document.getElementById(divname).appenchild(newImputDiv);
+
+Question 6
+Reponse:C, B, A
+var canvas = document.getElementbyId("myCanvas")//Definir le contexte
+context.fillStyle "rgb(255,0,0)";//Choisir le couleur
+context.fillRect(50,50,100,100);
+
+Question 7
+Reponse:A, B
+document.getElementById("logo").style.position="relative";
+document.getElementById("logo").style.top="5px";
+
+
+Question 8
+Reponse:A
+document.getElementById("validate")//boîtes en ligne.
+
+Question 9
+Reponse:C,D
+var button = document.addEvenListener("click",About);//Sont exactament egal a
+var button = document.attachEvent("onclick",About);//attachEvent
+
+Question 10
+Reponse: B,A,E
+self.addEventListener('message',function(event));
+self.postMessage('Worker'+ data);
+selt.close();
+
+Question 11
+Reponse: B, D, C, D, C, A
+Swich,case,break,case,break,default;//SWICH
+
+
+Question 12
+Reponse: B,D
+Doble egal (==) no importe  le type number ou string
+
+Question 13
+Reponse:C
+Code error est un Number
+
+Question 14
+Reponse: C
+this c'est l'evenement declancheur
+
+Question 15
+Reponse:A, C
+screen and (min-width:200px) and (max-width:480px);
+screen and (min-width:480px);
+
+Question 16
+Reponse: C
+Capitalize
+
+Question 17
+Reponse: A, B
+$(a img)//Selectione les images qu il y a dans "a".
+$(this).parent()//parent s'est "a"
+
+Question 18
+Reponse:A
+both//Repouse le text a droit et gauche.
+
+Question 19
+Reponse:D
+$(:header)//Select tous les "h1" à "h6"
+
+Question 20
+Reponse:A
+border-radius top, droit, bas, gauche
+
+Question 21
+Reponse: A, C
+La meme q la question 15
+
+Question 22
+Reponse: A, B, C, D
+LoVe HAte
+
+Question 23
+Reponse:A, B, C, D
+
+Question 24
+Reponse:A, B, C, D
+
+Question 25
+Reponse:D
+
+Question 26
+Reponse: C, D
+
+Question 27
+Reponse: A
+val()//Entre un nom. Pas vide
+
+Question 28
+Reponse:A, B
+str = $("form").serialize();//Serializer 
+str = decodeURIComponent(str);//Decodification
+
+
+Question 29
+Reponse:B
+xhr.onreadystatechange = xhrHsandler;//
+
+Question 30
+Reponse:B, A, E
+La meme que question 10
+*************************************************************************
+Question 61
+Reponse: B
+
+
