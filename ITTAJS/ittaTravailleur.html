@@ -5,23 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travailleur</title>
     <script>
+
+        window.onload=function(){
+        var divc=document.getElementById("compteur");
+        
         if (Worker) {
+            //var w = new ShareWorker('background.js');
             var w = new Worker('background.js');
             w.onmessage=function(event){
-                console.log(event.data);
+                divc.innerHTML=event.data;
             }
             w.onerror=function(event){
                 console.log(event.message + event.lineno+event.filename);
             }
         }else{
             alert("change de browser");
-        }
-        setTimeout(function(){w.terminate(); w.null;},1000);
-        w=null;
+        };
+
+        document.getElementById("btnAccelerer").onclick=function(){
+            w.postMessage({action:"accelerer"});
+        };
+
+        document.getElementById("btnFreiner").onclick=function(){
+            w.postMessage({action:"freiner"});
+        };
+
+        document.getElementById("btnArreter").onclick=function(){
+            w.postMessage({action:"arreter"});
+        };
+
+        setTimeout(function(){w.terminate(); w.null;},100000);
+        
+        //ShareWorker
+        // if (Worker) {
+        //     var sw = new ShareWorker('background.js');
+        //     sw.port.onmessage=divc.innerHTML=event.data
+        //     sw.port.start();
+
+        //     sw.port.postMessage({action:"accelerer"});
+            
+        //     document.getElementById("btnAccelerer").onclick=function(){
+        //         sw.postMessage({action:"accelerer"});
+        //     };
+
+        //     document.getElementById("btnFreiner").onclick=function(){
+        //         sw.postMessage({action:"freiner"});
+        //     };
+        //     document.getElementById("btnArreter").onclick=function(){
+        //         sw.postMessage({action:"arreter"});
+        // }
+        
+    };
         
     </script>
 </head>
 <body>
+    <button id="btnAccelerer">Accelerer</button>
+    <button id="btnFreiner">Freiner</button>
+    <button id="btnArreter">Arreter</button>
     
+    <div id="compteur"></div>
 </body>
 </html>
