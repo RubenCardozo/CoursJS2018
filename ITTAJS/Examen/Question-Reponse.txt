@@ -218,6 +218,84 @@ Question 79
 Reponse: D
 data:{city:"Boston"}
 
+Question 80
+Reponse: C
+<hgroup></hgroup>
+
+Question 81
+Reponse:D
+url:"/product/create"//pas de post dans l'URL
+
+Question 82
+Reponse: B
+readAsArrayBuffer()
+
+Question 83
+Reponse:a
+<article>
+
+Question 84
+Reponse:F, G, H, D
+function getFormatter(){
+	var _private
+	this.parseValue function(input){
+		return -private(input)
+	}
+
+}
+
+Question 85
+Reponse: C
+tr:first-of-type, tr;last-of-type
+
+Question 86
+Reponse:B
+pattern="https://.+"
+
+Question 87
+Reponse:A
+regex !/^[A-Za-z0-9_]+$/
+
+Question 88
+Reponse:
+
+Question 89
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+Question 90
+Reponse:
+
+
+
+
+
 
 
 
