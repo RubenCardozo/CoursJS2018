@@ -1,0 +1,35 @@
+svg{
+    background-color: rgb(221, 239, 240);
+    border: 1px solid black;
+}
+rect{
+    fill: url("#degrade"); 
+    stroke:blue; 
+    stroke-width:4;
+}
+
+circle{
+    fill:url("#chat"); 
+    stroke:blue; 
+    stroke-width:4;
+}
+
+ellipse{
+    fill:white; 
+    stroke:blue; 
+    stroke-width:4;
+}
+
+polygon{
+    fill:#003cff; 
+    stroke:blue; 
+    stroke-width:4;
+}
+path{
+    fill:#003cff; 
+    stroke:#0b0b30; 
+    stroke-width:4;
+}
+text{
+    stroke: #d6ab1c;
+}

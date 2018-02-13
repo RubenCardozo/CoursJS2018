@@ -133,5 +133,103 @@ La meme que question 10
 *************************************************************************
 Question 61
 Reponse: B
+div#container > ul
+
+Question 62
+Reponse: c
+line7: canvas.onclick=clickReporter//Les autres posibilites ne existe pas en js
+
+Question 63
+Reponse: c
+C'est l'unique reponse q selectione tbody
+
+
+Question 64
+Reponse: B
+if(>500)
+else if(<300)
+else{
+alert("Approved with caution!");
+}
+
+
+Question 65
+Reponse: // A revoir
+
+Question 66
+Reponse: No No Yes
+
+Question 67
+Reponse: No No Yes
+
+Question 68
+Reponse: C
+padding: 15px
+
+Question 69
+Reponse: C
+type="range"
+
+Question 70
+Reponse: C
+SVG
+
+Question 71
+Reponse: B, C
+
+Question 72
+Reponse:D
+
+Question 73
+Reponse:A
+
+Question 74
+Reponse:no,no,Yes,no,no
+undefined
+
+
+Question 75
+Reponse:D, B, B, A;
+if(element.value==="Please Choose"){
+element.focus();
+return false;
+}else{
+return true;}
+}
+
+Question 76
+Reponse:A, B
+A-ajax(No existe json sinogetJson)
+B- On ne veux pas de cache. On veux toujour la page plus actualiser
+
+
+Question 77
+Reponse:C, D,
+Relative
+Absolute
+
+
+Question 78
+Reponse:D, 4, 200
+readyState == 4
+status== 200
+
+Question 79
+Reponse: D
+data:{city:"Boston"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

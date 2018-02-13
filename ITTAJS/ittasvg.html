@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styleSVG.css">
+    <title>SVG</title>
+</head>
+<body>  
+    <svg width="300" height ="300">
+    
+    <defs>
+        <path id="mp" d="M10,20 A1,1 0 0,0 120,20"/>
+    </defs>
+
+    <linearGradient id="degrade">
+        <stop offset="0.3" stop-color="red"></stop>
+        <stop offset="0.8" stop-color="orange"></stop>
+    </linearGradient>
+
+    <pattern id="chat" patternUnits="objectBoundingBox" width="1" height="1">
+        <image xlink:href="images/titi.jpg" width="250" height="250"/>
+    </pattern>
+
+        <rect x="100" y= "150" width ="80" height="120"/>
+
+        <circle cx="200" cy= "150" r="100" width ="80" height="120"/>
+        
+        <ellipse cx="50" cy="220" rx="50" ry="80" />
+
+        <polygon points= "50,10,10,40,90,120"/>
+
+        <path d="M 10 200
+                L 110 215
+                A 30 50 0 0 1 162.55 162.45
+                L 172.55 152.45
+                A 30 50 -45 0 1 215.1 109.9
+                L 300 10"
+        />
+        <text/>
+        <text x="50" y="150">
+            <textpath xlink:href="#mp">UN SVG TEXTE</textpath>
+        </text>
+
+    </svg>
+</body>
+</html>

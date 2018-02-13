@@ -1,3 +1,4 @@
+
 var c1=document.getElementById('c1');
 var context = c1.getContext("2d");
 context.strokeStyle = "gray";
