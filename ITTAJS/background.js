@@ -30,4 +30,3 @@ function genererValeur(){
 }  
 
 genererValeur();
- 

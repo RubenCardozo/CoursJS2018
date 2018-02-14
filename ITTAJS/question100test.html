@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question100</title>
+    <style>
+    .container{
+        border: 3px solid green;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr;
+    }
+    .blueBox{
+        border: 2px solid rgb(216, 194, 67);
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        -ms-wrap-flow: auto;
+        float: none;
+        background-color: blue;
+        
+    }
+    .text{
+        border: 2px solid red;
+        -ms-grid-row:1;
+        -ms-grid-column:1;
+        -ms-grid-column-span: 3;
+        -ms-grid-row-span: 3;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div name="container" class="container">
+            <div name="blueBox" class="blueBox"></div>
+            <div name="content" class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis officiis facere veniam in iste? Reiciendis blanditiis illum possimus, velit, ipsam, dignissimos quasi autem eum delectus tempore nesciunt distinctio nihil iusto.</div>
+        </div>
+    </div>
+</body>
+</html>

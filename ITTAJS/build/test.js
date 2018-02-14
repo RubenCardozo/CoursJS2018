@@ -1,0 +1,1 @@
+window.clearInterval(speed.value)

@@ -3,7 +3,7 @@ Nav
 Reponse:C
 
 Question 2
-Reponse:
+Reponse:A, B
 Var dest;		//On declare la variable dans showDestination
 localStorage.destination;// On appelle storeDestination avec click sur le button
 
@@ -130,7 +130,126 @@ xhr.onreadystatechange = xhrHsandler;//
 Question 30
 Reponse:B, A, E
 La meme que question 10
-*************************************************************************
+
+Question 31
+Reponse: A, D, E
+JSON, String, Javascript
+
+Question 32
+Reponse: la meme que la question 2
+
+Question 33
+Reponse:B, C
+Sedan.prototype.fourDoor= function(){}
+Sedan.prototype = new Car();
+
+Question 34
+Reponse:B
+
+Question 35
+Reponse:A
+
+Question 36
+Reponse:A
+SVG
+
+Question 37
+Reponse:C, B, D
+Selectioner, couleur, designer.
+
+Question 38
+Reponse:A
+<aside>
+
+Question 39
+Reponse:C
+<footer>
+
+Question 40
+Reponse:A
+text-transform: Lowercase
+
+Question 41
+Reponse: range, 18, 90, 0, 37, required.
+
+Question 42
+Reponse: D
+
+Question 43
+Reponse: Text-Shadow:hshadow v-shadow blur color
+
+Question 44
+Reponse: A
+Text-transforme: Capitalize;
+
+Question 45
+Reponse:a
+<article>
+
+Question 46
+Reponse:A, B
+
+Question 47
+Reponse: A
+<section>
+
+Question 48
+Reponse:C
+pattern="[A-Za-z]{3}"
+
+Question 49
+Reponse:A
+text-transform: Capitalize;
+
+Question 50
+Reponse:C
+text-transform: Capitalize;
+
+Question 51
+Reponse:B
+<article>
+
+Question 52
+Reponse:D
+<section>
+
+Question 53
+Reponse:C
+text-transform:lowercase;
+
+Question 54
+Reponse: A
+text-transform:lowercase;
+
+Question 55
+Reponse:
+
+user agent style sheets
+user normal style sheets
+author normal style sheets
+author important style sheets
+user important style sheets
+
+Question 56
+Reponse:C
+text-transform: Capatilize
+
+Question 57
+Reponse:A, E
+La premier ligne du tableau aura un bc rouge;
+La second cellule de la 3eme ligne du tableau n'aura pas bc blue
+
+Question 58
+Reponse:No No No Yes
+
+Question 59
+Reponse:Yes, Yes, No
+
+Question 60
+Reponse:C
+100px 250px 100px 250px
+auto //oubligé
+
 Question 61
 Reponse: B
 div#container > ul
@@ -257,45 +376,131 @@ Reponse:A
 regex !/^[A-Za-z0-9_]+$/
 
 Question 88
-Reponse:
+Reponse:B, B, C
 
 Question 89
-Reponse:
+Reponse:X
 
 Question 90
-Reponse:
+Reponse:X
 
-Question 90
-Reponse:
+Question 91
+Reponse: C
+data-*
 
-Question 90
-Reponse:
+Question 92
+Reponse: A
+HTML 4.01
 
-Question 90
-Reponse:
+Question 93
+Reponse: C
+context.rotate(90)
 
-Question 90
-Reponse:
+Question 94
+Reponse: B
+QUnit-Metro
 
-Question 90
-Reponse:
+Question 95
+Reponse: B
 
-Question 90
-Reponse:
+Question 96
+Reponse:C
 
-Question 90
-Reponse:
+Question 97
+Reponse:A
 
-Question 90
-Reponse:
+Question 98
+Reponse: A
+type= "password" autocomplete="off"
 
-Question 90
-Reponse:
+Question 99
+Reponse: A
+var stock = this// conserver le stock dans un variable
 
+Question 100
+Reponse:No Yes Yes
 
+Question 101
+Reponse:H, G, A
+cancelable: false
+"orderReceived", showOrderReceivedCount;
+cancelable: True
 
+Question 102
+Reponse:C, G
+this.v3+this.v4
+add.call(o, 15, 3);
 
+Question 103
+Reponse:A, C
+CSS //Selecteur
 
+Question 104
+Reponse: B, C
+Pas de manipulation du DOM a partir du Web Worker;
+Pas de manipulation du LocalStorage de la part du Web Worker;
+
+Question 105
+Reponse: B
+.setAttribute("currentScale", 1.5)//SVG 
+
+Question 106
+Reponse: C
+
+Question 107
+Reponse: C
+Web Socket
+
+Question 108
+Reponse:C
+column-width:100px
+
+Question 109
+Reponse:D
+placeholder
+
+Question 110
+Reponse: C
+First-of-type// Premier du son type
+
+Question 111
+Reponse:D
+this.side//Cible le side la function
+
+Question 112
+Reponse:B,B,B,E,D
+disabled, disabled, disabled, false, true
+
+Question 113
+Reponse:D
+type="range"
+
+Question 114
+Reponse:B
+blob(Bynary Large objet)//Pdf Images etc.
+this.response//Pas de text
+
+Question 115
+Reponse:A, B
+parseInt()//
+
+Question 116
+Reponse:X
+
+Question 117
+Reponse:B, A
+mousemove
+innerHTML
+
+Question 118
+Reponse:A, A, B
+
+Question 119
+Reponse:A
+window.onerror//Global error
+
+Question 120
+Reponse:B o D
 
 
 
