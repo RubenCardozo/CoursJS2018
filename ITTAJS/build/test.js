@@ -1,1 +1,1 @@
-window.clearInterval(speed.value)
+window.clearInterval(speed.value);

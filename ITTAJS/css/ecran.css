@@ -6,5 +6,5 @@ body{
 .invalid{
     border: 1px solid red;
     color: #fffacd;
+    background-image: linear-gradient(to bottom, green, black);
 }
-

@@ -1,7 +1,6 @@
 var compteur = 0;
 var retard= 150;
 
-
 this.onmessage=function(event){
     console.log(retard);
     if(event.data.action==="accelerer"){

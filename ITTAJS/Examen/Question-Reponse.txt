@@ -500,8 +500,246 @@ Reponse:A
 window.onerror//Global error
 
 Question 120
-Reponse:B o D
+Reponse:D
 
+Question 121
+Reponse:D
+.click()// Appel la fonction
+.trigger('')//Cible le evenement
+
+Question 122
+Reponse: true, true, false, false
+Tous ce que tappe l'usuaire est un String
+
+Question 123
+Reponse:B
+CORS
+
+Question 124
+Reponse:A
+<iframe sambox src="frame1.html"></iframe>
+
+Question 125
+Reponse:C
+keydown (return false)
+
+Question 126
+Reponse:A, C
+stopPropagation
+someevent(this, event)
+
+Question 127
+Reponse:B
+<fieldset>
+
+Question 128
+Reponse:D
+type="email"
+
+Question 129
+Reponse:D
+
+Question 130
+Reponse:
+<article>
+<header>
+<div class="posting">
+
+Question 131
+Reponse:A
+return 10//la fonction fun() n'est jamais apeller
+
+Question 132
+Reponse:A
+
+Question 133
+Reponse:B
+localStorage
+
+Question 134
+Reponse:D
+
+Question 135
+Reponse:D
+
+Question 136
+Reponse:C
+
+Question 137
+Reponse:F, A
+src= url()format()
+'special' sans-serif
+
+Question 138
+Reponse:A
+<embed>
+
+Question 139
+Reponse:A
+SVG
+
+Question 140
+Reponse:C
+NaN
+
+Question 141
+Reponse:BCDE
+variable
+
+Question 142
+Reponse:B
+successfully 
+
+Question 143
+Reponse:C, D
+page call the terminate();
+web worker call the close()
+
+Question 144
+Reponse: C
+Separate .js
+
+Question 145
+Reponse:A
+throw new ValidationException
+
+Question 146
+Reponse:D
+transform:rotate(90deg)
+
+Question 147
+Reponse: A
+Scope 
+
+Question 148
+Reponse:C
+Websockets
+
+Question 149
+Reponse:D
+Canvas 2D
+
+Question 150
+Reponse:B, D
+email tag
+regex
+
+Question 151
+Reponse:B, D
+Regex
+
+Question 152
+Reponse:X
+
+Question 153
+Reponse:D
+type:email
+
+Question 154
+Reponse:A, B
+
+Question 155
+Reponse:A
+username et password
+
+Question 156
+Reponse:D
+onprogress
+
+Question 157
+Reponse:D
+.text(JSON)//C'est de jQuery
+
+Question 158
+Reponse:D,
+accepts: "application/bint"
+if(request.getResponseHeader(Content-Type)=="application/bint")
+
+Question 159
+Reponse:B
+pattern="[A-Za-z]{3}"
+
+Question 160
+Reponse:
+range
+18-90
+value= 37
+required
+
+Question 161
+Reponse:A
+this.status
+
+Question 162
+Reponse:C, B
+Objet et surcharge de methode
+
+Question 163
+Reponse:B, C
+WebWorker onmessage
+
+Question 164
+Reponse:C
+var that = this;
+
+Question 165
+Reponse:A
+onBlur
+
+Question 166
+Reponse:
+throw new error (200, invalid")
+
+Question 167
+Reponse:text-shadow
+
+Question 168
+Reponse:A
+nth-child(2)input
+$(this).parent().next().css
+
+Question 169
+Reponse:A
+grid-column-span:2
+
+Question 170
+Reponse:User agent
+
+Question 171
+Reponse:A
+
+Question 172
+Reponse:A, B
+opacity
+rgba
+
+Question 170
+Reponse:
+
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
+
+Question 170
+Reponse:
 
 
 
