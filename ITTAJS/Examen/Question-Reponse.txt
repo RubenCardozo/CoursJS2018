@@ -37,12 +37,12 @@ document.getElementById("logo").style.top="5px";
 
 Question 8
 Reponse:A
-document.getElementById("validate")//boîtes en ligne.
+document.getElementById("validate").style.display=relative//boîtes en ligne.
 
 Question 9
 Reponse:C,D
-var button = document.addEvenListener("click",About);//Sont exactament egal a
-var button = document.attachEvent("onclick",About);//attachEvent
+var button = document.addEvenListener("click",About);//Il est exactament egal a
+var button = document.attachEvent("onclick",About);//attachEvent, mais c'est utilisé pour IE uniquement!!!
 
 Question 10
 Reponse: B,A,E
@@ -52,7 +52,7 @@ selt.close();
 
 Question 11
 Reponse: B, D, C, D, C, A
-Swich,case,break,case,break,default;//SWICH
+Switch,case,break,case,break,default;//SWITCH
 
 
 Question 12
@@ -60,12 +60,12 @@ Reponse: B,D
 Doble egal (==) no importe  le type number ou string
 
 Question 13
-Reponse:C
+Reponse:C //try catch (e.number)
 Code error est un Number
 
 Question 14
 Reponse: C
-this c'est l'evenement declancheur
+this c'est l'evenement declancheur (Button)
 
 Question 15
 Reponse:A, C
@@ -125,7 +125,7 @@ str = decodeURIComponent(str);//Decodification
 
 Question 29
 Reponse:B
-xhr.onreadystatechange = xhrHsandler;//
+xhr.onreadystatechange = xhrHsandler;//Methode pour ecouter les changements
 
 Question 30
 Reponse:B, A, E
