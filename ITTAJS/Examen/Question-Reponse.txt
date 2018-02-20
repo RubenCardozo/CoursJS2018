@@ -4,7 +4,7 @@ Reponse:C
 
 Question 2
 Reponse:A, B
-Var dest;		//On declare la variable dans showDestination
+Var dest = local.Storage.destination;		//On declare la variable dans showDestination
 localStorage.destination;// On appelle storeDestination avec click sur le button
 
 Question 3
@@ -37,7 +37,7 @@ document.getElementById("logo").style.top="5px";
 
 Question 8
 Reponse:A
-document.getElementById("validate")//boîtes en ligne.
+document.getElementById("validate")//boÃ®tes en ligne.
 
 Question 9
 Reponse:C,D
@@ -87,7 +87,7 @@ both//Repouse le text a droit et gauche.
 
 Question 19
 Reponse:D
-$(:header)//Select tous les "h1" à "h6"
+$(:header)//Select tous les "h1" Ã  "h6"
 
 Question 20
 Reponse:A
@@ -248,7 +248,7 @@ Reponse:Yes, Yes, No
 Question 60
 Reponse:C
 100px 250px 100px 250px
-auto //oubligé
+auto //oubligÃ©
 
 Question 61
 Reponse: B
