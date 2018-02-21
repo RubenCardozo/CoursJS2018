@@ -300,7 +300,8 @@ Question 72
 Reponse:D
 
 Question 73
-Reponse:A
+Reponse:C
+show()
 
 Question 74
 Reponse:no,no,Yes,no,no
@@ -318,8 +319,8 @@ return true;}
 
 Question 76
 Reponse:A, B
-A-ajax(No existe json sinogetJson)
-B- On ne veux pas de cache. On veux toujour la page plus actualiser
+A-ajax(No existe json sinon getJson)
+B- false. On ne veux pas de cache. On veux toujour la page plus actualiser
 
 
 Question 77
@@ -329,7 +330,7 @@ Absolute
 
 
 Question 78
-Reponse:D, 4, 200
+Reponse:D, D, B
 readyState == 4
 status== 200
 
@@ -356,16 +357,17 @@ Reponse:a
 Question 84
 Reponse:F, G, H, D
 function getFormatter(){
-	var _private
+	var _private = function(data){
+		return custom (data);
+	};
 	this.parseValue function(input){
-		return -private(input)
-	}
-
+		return _private(input);
+	};
 }
 
 Question 85
 Reponse: C
-tr:first-of-type, tr;last-of-type
+tr:first-of-type, tr:last-of-type
 
 Question 86
 Reponse:B
@@ -421,8 +423,8 @@ Question 100
 Reponse:No Yes Yes
 
 Question 101
-Reponse:H, G, A
-cancelable: false
+Reponse:F, G, A
+var orderListing =
 "orderReceived", showOrderReceivedCount;
 cancelable: True
 
